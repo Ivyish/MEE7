@@ -1,35 +1,42 @@
 const Discord = require('discord.js');
 
+const { includes } = require('ffmpeg-static');
+
 const client = new Discord.Client();
 
-const Magic = '761706090403987496';
+/online/
+client.once('ready', () => {
+    console.log('MEE7 is online!');
+  });
 
 const prefix = '!';
 
-const ytdl = require("ytdl-core");
-
 var servers = {};
 
+/ needed /
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+  });
+  
+  client.on('message', msg => {
+    if (msg.content === 'Game?') {
+      msg.reply('@game ping');
+    }
+  });
 
-client.once('ready', () => {
-    console.log('MEE7 is online!');
-});
-
+/simple command/
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-
-  if (message.content == '!magic') {
-      message.member.roles.add(Magic);
-  }
-
-   
-     
-   
+  
 
 });
 
+///////////////////////////////////////////////
+
+
+
+
+client.login(duck);
 
 
