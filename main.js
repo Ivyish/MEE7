@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 /online/
 client.once('ready', () => {
-    console.log('MEE7 is online!');
+    console.log('Flora is online!');
   });
 
 const prefix = '!';
